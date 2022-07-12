@@ -8,6 +8,10 @@ if($data[$i]==5){
 	print("Buzz <br>");
 }elseif($data[$i] == 5 && $data[$i] == 11){
 	print("FizzBuzz <br>");
+} else {
+	print("$data[$i] <br>");
 }
 }
 ?>
+
+<!-- Jika angka yang keluar adalah 5 dan 11 maka output yang di hasilkan adalah "FizzBuzz" mohon maaf ini soalnya emang begini apa gimana ya? -->

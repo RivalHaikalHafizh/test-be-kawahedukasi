@@ -1,4 +1,4 @@
-$sql ="SELECT nama,MAX(gaji) from kawahedukasi";
-$sql ="SELECT nama,MAX(gaji),MAX(nilai) from kawahedukasi where kelas ='BACKEND'";
-$sql ="SELECT COUNT(*) from kawahedukasi where kelas ='FRONTEND'";
-$sql ="SELECT max(jumlah_kehadiran),max(nilai) from kawahedukasi where kelas ='FRONTEND'";
+$sql ="SELECT nama,gaji AS gajiTertinggi from kawahedukasi where gaji =(select MAX(gaji) from kawahedukasi)";
+$sql ="SELECT nama,gaji AS gajiTertinggi,nilai AS nilaiTertinggi,kelas AS dariKelas from kawahedukasi where gaji =(select MAX(gaji) from kawahedukasi where kelas='BACKEND') AND nilai = (select MAX(nilai) from kawahedukasi where kelas='BACKEND')";
+$sql ="SELECT COUNT(*) as totalpesertafrontend from kawahedukasi where kelas ='FRONTEND'";
+$sql ="SELECT max(jumlah_kehadiran) AS kehadiranTertinggi,max(nilai) AS nilaiTertinggi from kawahedukasi where kelas ='FRONTEND'";
